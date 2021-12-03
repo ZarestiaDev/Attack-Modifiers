@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root version="3.3" >
+	<properties>
+		<name>Feature: Attack Modifiers</name>
+		<version>1.3</version>
+		<loadorder>51</loadorder>
+		<description>
+			<text>Feature: Attack Modifiers</text>
+			<author>Zarestia</author>
+		</description>
+		<ruleset>
+			<name>3.5E</name>
+		</ruleset>
+		<ruleset>
+			<name>PFRPG</name>
+		</ruleset>
+	</properties>
+	<announcement text="3.5E/PFRPG Attack Modifiers - version 1.3 \rby Zarestia, 2021\r---" font="emotefont"/>
+	<base>
+		<!-- Campaign -->
+		<includefile source="campaign/record_char_actions.xml" />
+		
+		<!-- High-Level Scripts -->
+		<script name="ActionAttackCustom" file="scripts/manager_action_attack_custom.lua" />
+		<script name="ExtensionName" file="scripts/manager_get_extension.lua" />
+		
+		<!-- Strings -->
+		<includefile source="strings/am_strings.xml" />
+		
+		<!-- Graphics -->
+		<includefile source="graphics/graphics_buttons.xml" />
+		
+		<!-- Templates -->
+		<includefile source="campaign/template_button_am.xml" />
+	</base>
+</root>

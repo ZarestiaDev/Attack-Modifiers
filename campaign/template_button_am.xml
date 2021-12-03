@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+	<template name="button_modifierkey_am">
+		<buttoncontrol>
+			<script file="campaign/scripts/button_change.lua" />
+			<anchored height="16" width="16" />
+			<cursor hover="hand" />
+			<state icon="buttonup_am" />
+			<state icon="buttondown_am" />
+		</buttoncontrol>
+	</template>
+</root>

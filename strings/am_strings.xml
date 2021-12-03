@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+	<!-- Attack Modifier -->
+	<string name="am_flanking">Flanking (+2)</string>
+	<string name="am_shootmelee">Shoot Melee (-4)</string>
+	<string name="am_touch">Touch</string>
+	<string name="am_pcover">Partial Cover (-2)</string>
+	<string name="am_cover">Cover (-4)</string>
+	<string name="am_scover">Superior Cover (-8)</string>
+	<string name="am_conc">Concealment (20%)</string>
+	<string name="am_tconc">Total Concealment (50%)</string>
+	<string name="am_charge">Charge (+2)</string>
+	<string name="am_deffighting">Defensive Fighting (-4)</string>
+	<string name="am_highground">High Ground (+1)</string>
+	<string name="am_nonlethal">Non-Lethal (-4)</string>
+</root>
