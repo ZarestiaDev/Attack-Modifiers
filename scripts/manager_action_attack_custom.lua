@@ -4,6 +4,15 @@
 --
 
 function onInit()
+	local _tAMModifierExclusionSet =
+	{
+		{ "DEF_SHOOTMELEE", "ATT_FLANK"},
+		{ "DEF_SHOOTMELEE", "ATT_CHARGE"},
+		{ "DEF_SHOOTMELEE", "ATT_HIGHGROUND"},
+		{ "DEF_SHOOTMELEE", "DEF_NONLETHAL"},
+	}
+
+	ModifierManager.addKeyExclusionSets(_tAMModifierExclusionSet)
 	ActionsManager.registerModHandler("attack", modAttackCustom);
 end
 
