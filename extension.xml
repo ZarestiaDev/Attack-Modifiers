@@ -19,6 +19,7 @@
 	<announcement text="3.5E/PFRPG Attack Modifiers - version 1.3 \rby Zarestia, 2021\r---" font="emotefont"/>
 	<base>
 		<!-- Campaign -->
+		<includefile source="campaign/record_char.xml" />
 		<includefile source="campaign/record_char_actions.xml" />
 		
 		<!-- High-Level Scripts -->
