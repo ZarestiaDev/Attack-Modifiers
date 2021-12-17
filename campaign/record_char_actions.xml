@@ -1,0 +1,326 @@
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+	<windowclass name="charsheet_actions" merge="join">
+		<script file="campaign/scripts/char_actions.lua" />
+		<sheetdata>
+			<subwindow name="actions_am" insertbefore="actions">
+				<bounds>0,0,0,0</bounds>
+				<class>char_actions_details_am</class>
+			</subwindow>
+			
+			<subwindow name="actions">
+				<anchored>
+					<top parent="actions_am" anchor="bottom"/>
+					<bottom />
+					<left />
+					<right />
+				</anchored>
+				<activate />
+				<class>char_actions_details</class>
+			</subwindow>
+			
+		</sheetdata>
+	</windowclass>
+	
+	<windowclass name="char_actions_details_am">
+		<sheetdata>
+			<genericcontrol name="1st_column">
+				<anchored position="insidetopleft" offset="10,5" />
+				<disabled />
+				<invisible />
+			</genericcontrol>
+			
+			<genericcontrol name="2nd_column">
+				<anchored position="insidetopleft" offset="150,0" />
+				<disabled />
+				<invisible />
+			</genericcontrol>
+			
+			<genericcontrol name="3rd_column">
+				<anchored position="insidetopleft" offset="320,0" />
+				<disabled />
+				<invisible />
+			</genericcontrol>
+			
+			<!-- 1st Column -->
+			<button_modifierkey_am name="ATT_FLANK">
+				<anchored>
+					<top parent="1st_column" anchor="below" offset="14" />
+					<left parent="1st_column" anchor="left" />
+				</anchored>
+				<script>
+					function onButtonPress()
+						super.onButtonPress();
+						
+						if getValue() == 1 then
+							window["DEF_SHOOTMELEE"].setValue(0);
+							ModifierManager.setKey("DEF_SHOOTMELEE", false);
+						end
+					end
+				</script>
+			</button_modifierkey_am>
+			<label name="label_ATT_FLANK">
+				<anchored>
+					<top parent="1st_column" anchor="below" offset="12" />
+					<left parent="ATT_FLANK" anchor="right" offset="5" />
+				</anchored>
+				<static textres="am_flanking" />
+			</label>
+			
+			<button_modifierkey_am name="ATT_CHARGE">
+				<anchored>
+					<top parent="ATT_FLANK" anchor="below" offset="14" />
+					<left parent="1st_column" anchor="left" />
+				</anchored>
+				<script>
+					function onButtonPress()
+						super.onButtonPress();
+						
+						if getValue() == 1 then
+							window["DEF_SHOOTMELEE"].setValue(0);
+							ModifierManager.setKey("DEF_SHOOTMELEE", false);
+						end
+					end
+				</script>
+			</button_modifierkey_am>
+			<label name="label_ATT_CHARGE">
+				<anchored>
+					<top parent="ATT_FLANK" anchor="below" offset="12" />
+					<left parent="ATT_CHARGE" anchor="right" offset="5" />
+				</anchored>
+				<static textres="am_charge" />
+			</label>
+			
+			<button_modifierkey_am name="ATT_HIGHGROUND">
+				<anchored>
+					<top parent="ATT_CHARGE" anchor="below" offset="14" />
+					<left parent="1st_column" anchor="left" />
+				</anchored>
+				<script>
+					function onButtonPress()
+						super.onButtonPress();
+						
+						if getValue() == 1 then
+							window["DEF_SHOOTMELEE"].setValue(0);
+							ModifierManager.setKey("DEF_SHOOTMELEE", false);
+						end
+					end
+				</script>
+			</button_modifierkey_am>
+			<label name="label_ATT_HIGHGROUND">
+				<anchored>
+					<top parent="ATT_CHARGE" anchor="below" offset="12" />
+					<left parent="ATT_HIGHGROUND" anchor="right" offset="5" />
+				</anchored>
+				<static textres="am_highground" />
+			</label>
+			
+			<button_modifierkey_am name="DEF_PCOVER">
+				<anchored>
+					<top parent="ATT_HIGHGROUND" anchor="below" offset="14" />
+					<left parent="1st_column" anchor="left" />
+				</anchored>
+				<script>
+					function onButtonPress()
+						super.onButtonPress();
+						
+						if getValue() == 1 then
+							window["DEF_COVER"].setValue(0);
+							window["DEF_SCOVER"].setValue(0);
+						end
+					end
+				</script>
+			</button_modifierkey_am>
+			<label name="label_DEF_PCOVER">
+				<anchored>
+					<top parent="ATT_HIGHGROUND" anchor="below" offset="12" />
+					<left parent="DEF_PCOVER" anchor="right" offset="5" />
+				</anchored>
+				<static textres="am_pcover" />
+			</label>
+			
+			<!-- 2nd Column -->
+			<button_modifierkey_am name="DEF_NONLETHAL">
+				<anchored>
+					<top parent="1st_column" anchor="below" offset="14" />
+					<left parent="2nd_column" anchor="right" />
+				</anchored>
+				<script>
+					function onButtonPress()
+						super.onButtonPress();
+						
+						if getValue() == 1 then
+							window["DEF_SHOOTMELEE"].setValue(0);
+							ModifierManager.setKey("DEF_SHOOTMELEE", false);
+						end
+					end
+				</script>
+			</button_modifierkey_am>
+			<label name="label_DEF_NONLETHAL">
+				<anchored>
+					<top parent="1st_column" anchor="below" offset="12" />
+					<left parent="DEF_NONLETHAL" anchor="right" offset="5" />
+				</anchored>
+				<static textres="am_nonlethal" />
+			</label>
+			
+			<button_modifierkey_am name="DEF_SHOOTMELEE">
+				<anchored>
+					<top parent="DEF_NONLETHAL" anchor="below" offset="14" />
+					<left parent="2nd_column" anchor="right" />
+				</anchored>
+				<script>
+					function onButtonPress()
+						super.onButtonPress();
+						
+						if getValue() == 1 then
+							window["ATT_FLANK"].setValue(0);
+							window["ATT_CHARGE"].setValue(0);
+							window["ATT_HIGHGROUND"].setValue(0);
+							window["DEF_NONLETHAL"].setValue(0);
+							ModifierManager.setKey("ATT_FLANK", false);
+							ModifierManager.setKey("ATT_CHARGE", false);
+							ModifierManager.setKey("ATT_HIGHGROUND", false);
+							ModifierManager.setKey("DEF_NONLETHAL", false);
+						end
+					end
+				</script>
+			</button_modifierkey_am>
+			<label name="label_DEF_SHOOTMELEE">
+				<anchored>
+					<top parent="DEF_NONLETHAL" anchor="below" offset="12" />
+					<left parent="DEF_SHOOTMELEE" anchor="right" offset="5" />
+				</anchored>
+				<static textres="am_shootmelee" />
+			</label>
+			
+			<button_modifierkey_am name="DEF_FIGHTING">
+				<anchored>
+					<top parent="DEF_SHOOTMELEE" anchor="below" offset="14" />
+					<left parent="2nd_column" anchor="right" />
+				</anchored>
+			</button_modifierkey_am>
+			<label name="label_DEF_FIGHTING">
+				<anchored>
+					<top parent="DEF_SHOOTMELEE" anchor="below" offset="12" />
+					<left parent="DEF_FIGHTING" anchor="right" offset="5" />
+				</anchored>
+				<static textres="am_deffighting" />
+			</label>
+			
+			<button_modifierkey_am name="DEF_COVER">
+				<anchored>
+					<top parent="DEF_FIGHTING" anchor="below" offset="14" />
+					<left parent="2nd_column" anchor="right" />
+				</anchored>
+				<script>
+					function onButtonPress()
+						super.onButtonPress();
+						
+						if getValue() == 1 then
+							window["DEF_PCOVER"].setValue(0);
+							window["DEF_SCOVER"].setValue(0);
+						end
+					end
+				</script>
+			</button_modifierkey_am>
+			<label name="label_DEF_COVER">
+				<anchored>
+					<top parent="DEF_FIGHTING" anchor="below" offset="12" />
+					<left parent="DEF_COVER" anchor="right" offset="5" />
+				</anchored>
+				<static textres="am_cover" />
+			</label>
+			
+			<!-- 3rd Column -->
+			<button_modifierkey_am name="ATT_TCH">
+				<anchored>
+					<top parent="1st_column" anchor="below" offset="14" />
+					<left parent="3rd_column" anchor="right" />
+				</anchored>
+			</button_modifierkey_am>
+			<label name="label_ATT_TCH">
+				<anchored>
+					<top parent="1st_column" anchor="below" offset="12" />
+					<left parent="ATT_TCH" anchor="right" offset="5" />
+				</anchored>
+				<static textres="am_touch" />
+			</label>
+			
+			<button_modifierkey_am name="DEF_CONC">
+				<anchored>
+					<top parent="ATT_TCH" anchor="below" offset="14" />
+					<left parent="3rd_column" anchor="right" />
+				</anchored>
+				<script>
+					function onButtonPress()
+						super.onButtonPress();
+						
+						if getValue() == 1 then
+							window["DEF_TCONC"].setValue(0);
+						end
+					end
+				</script>
+			</button_modifierkey_am>
+			<label name="label_DEF_CONC">
+				<anchored>
+					<top parent="ATT_TCH" anchor="below" offset="12" />
+					<left parent="DEF_CONC" anchor="right" offset="5" />
+				</anchored>
+				<static textres="am_conc" />
+			</label>
+			
+			<button_modifierkey_am name="DEF_TCONC">
+				<anchored>
+					<top parent="DEF_CONC" anchor="below" offset="14" />
+					<left parent="3rd_column" anchor="right" />
+				</anchored>
+				<script>
+					function onButtonPress()
+						super.onButtonPress();
+						
+						if getValue() == 1 then
+							window["DEF_CONC"].setValue(0);
+						end
+					end
+				</script>
+			</button_modifierkey_am>
+			<label name="label_DEF_TCONC">
+				<anchored>
+					<top parent="DEF_CONC" anchor="below" offset="12" />
+					<left parent="DEF_TCONC" anchor="right" offset="5" />
+				</anchored>
+				<static textres="am_tconc" />
+			</label>
+			
+			<button_modifierkey_am name="DEF_SCOVER">
+				<anchored>
+					<top parent="DEF_TCONC" anchor="below" offset="14" />
+					<left parent="3rd_column" anchor="right" />
+				</anchored>
+				<script>
+					function onButtonPress()
+						super.onButtonPress();
+						
+						if getValue() == 1 then
+							window["DEF_PCOVER"].setValue(0);
+							window["DEF_COVER"].setValue(0);
+						end
+					end
+				</script>
+			</button_modifierkey_am>
+			<label name="label_DEF_SCOVER">
+				<anchored>
+					<top parent="DEF_TCONC" anchor="below" offset="12" />
+					<left parent="DEF_SCOVER" anchor="right" offset="5" />
+				</anchored>
+				<static textres="am_scover" />
+			</label>
+		</sheetdata>
+	</windowclass>
+</root>
