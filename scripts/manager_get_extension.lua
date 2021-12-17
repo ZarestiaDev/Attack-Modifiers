@@ -6,8 +6,8 @@
 function getExtensionName()
 	local bThemeTable = Extension.getExtensions();
 	
-	for _, bThemeTable in ipairs(bThemeTable) do
-		local bThemeName = Extension.getExtensionInfo(bThemeTable).name;
+	for _,v in ipairs(bThemeTable) do
+		local bThemeName = Extension.getExtensionInfo(v).name;
 		if string.find(bThemeName, "Theme:") then
 			return bThemeName;
 		end

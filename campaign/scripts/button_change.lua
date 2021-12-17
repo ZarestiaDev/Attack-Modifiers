@@ -76,29 +76,31 @@ end
 function changeThemeButtons()
 	local bThemeName = ExtensionName.getExtensionName();
 	
-	if bThemeName == "Theme: FG Dark" then
-		setStateIcons(0, "dark_buttonup_am");
-		setStateIcons(1, "dark_buttondown_am");
-	elseif bThemeName == "Theme: FG Futuristic" then
-		setStateIcons(0, "futuristic_buttonup_am");
-		setStateIcons(1, "futuristic_buttondown_am");
-	elseif bThemeName == "Theme: FG Light" then
-		setStateIcons(0, "light_buttonup_am");
-		setStateIcons(1, "light_buttondown_am");
-	elseif bThemeName == "Theme: FG Modern" then
-		setStateIcons(0, "modern_buttonup_am");
-		setStateIcons(1, "modern_buttondown_am");
-	elseif bThemeName == "Theme: FG Modern Dark" then
-		setStateIcons(0, "modern_dark_buttonup_am");
-		setStateIcons(1, "modern_dark_buttondown_am");
-	elseif bThemeName == "Theme: FG Simple Brown" then
-		setStateIcons(0, "brown_buttonup_am");
-		setStateIcons(1, "brown_buttondown_am");
-	elseif bThemeName == "Theme: FG Simple Gray" then
-		setStateIcons(0, "gray_buttonup_am");
-		setStateIcons(1, "gray_buttondown_am");
-	elseif bThemeName == "Theme: FG Winter" then
-		setStateIcons(0, "winter_buttonup_am");
-		setStateIcons(1, "winter_buttondown_am");
+	if bThemeName ~= nil then
+		if bThemeName == "Theme: FG Dark" then
+			setStateIcons(0, "dark_buttonup_am");
+			setStateIcons(1, "dark_buttondown_am");
+		elseif bThemeName == "Theme: FG Futuristic" then
+			setStateIcons(0, "futuristic_buttonup_am");
+			setStateIcons(1, "futuristic_buttondown_am");
+		elseif bThemeName == "Theme: FG Light" then
+			setStateIcons(0, "light_buttonup_am");
+			setStateIcons(1, "light_buttondown_am");
+		elseif bThemeName == "Theme: FG Modern" then
+			setStateIcons(0, "modern_buttonup_am");
+			setStateIcons(1, "modern_buttondown_am");
+		elseif bThemeName == "Theme: FG Modern Dark" then
+			setStateIcons(0, "modern_dark_buttonup_am");
+			setStateIcons(1, "modern_dark_buttondown_am");
+		elseif bThemeName == "Theme: FG Simple Brown" then
+			setStateIcons(0, "brown_buttonup_am");
+			setStateIcons(1, "brown_buttondown_am");
+		elseif bThemeName == "Theme: FG Simple Gray" then
+			setStateIcons(0, "gray_buttonup_am");
+			setStateIcons(1, "gray_buttondown_am");
+		elseif bThemeName == "Theme: FG Winter" then
+			setStateIcons(0, "winter_buttonup_am");
+			setStateIcons(1, "winter_buttondown_am");
+		end
 	end
 end
