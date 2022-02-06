@@ -5,6 +5,11 @@
 
 -- Zarstia adding onInit function
 function onInit()
+	local sExtensions = ExtensionName.getExtensionName();
+	if string.find(sExtensions, "Extra Actions") then
+		actions_am.setAnchor("top", "shortcutframe", "bottom");
+	end
+
 	onSubwindowModeChanged();
 end
 
@@ -20,10 +25,13 @@ end
 function onSubwindowModeChanged()
 	local bPrepMode = DB.getValue(getDatabaseNode(), "spellmode", "");
 	if bPrepMode == "combat" then
-		actions_am.setStaticBounds(23,0,-29,130);
+		actions_am.setAnchor("left", "", "left", "", 23);
+		actions_am.setAnchoredWidth(-29);
+		actions_am.setAnchoredHeight(130);
 		actions_am.setVisible(true);
 	else
-		actions_am.setStaticBounds(0,0,0,0);
+		actions_am.setAnchoredWidth(0);
+		actions_am.setAnchoredHeight(0);
 		actions_am.setVisible(false);
 	end
 end

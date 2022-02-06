@@ -74,7 +74,7 @@ function onButtonPress()
 end
 
 function changeThemeButtons()
-	local bThemeName = ExtensionName.getExtensionName();
+	local bThemeName = ExtensionName.getThemeName();
 	
 	if bThemeName ~= nil then
 		if bThemeName == "Theme: FG Dark" then

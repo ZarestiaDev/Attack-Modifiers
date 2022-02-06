@@ -9,7 +9,10 @@
 		<script file="campaign/scripts/char_actions.lua" />
 		<sheetdata>
 			<subwindow name="actions_am" insertbefore="actions">
-				<bounds>0,0,0,0</bounds>
+				<anchored width="0" height="0">
+					<left />
+					<top />
+				</anchored>
 				<class>char_actions_details_am</class>
 			</subwindow>
 			

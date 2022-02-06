@@ -3,13 +3,19 @@
 -- attribution and copyright information.
 --
 
-function getExtensionName()
-	local bThemeTable = Extension.getExtensions();
+function getThemeName()
+	local tTheme = Extension.getExtensions();
 	
-	for _,v in ipairs(bThemeTable) do
-		local bThemeName = Extension.getExtensionInfo(v).name;
-		if string.find(bThemeName, "Theme:") then
-			return bThemeName;
+	for _,v in ipairs(tTheme) do
+		local sThemeName = Extension.getExtensionInfo(v).name;
+		if string.find(sThemeName, "Theme:") then
+			return sThemeName;
 		end
 	end
+end
+
+function getExtensionName()
+	local tName = Extension.getExtensions();
+	local sName = table.concat(tName, ",");
+	return sName;
 end
