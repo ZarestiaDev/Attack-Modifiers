@@ -5,8 +5,9 @@
 
 -- Zarstia adding onInit function
 function onInit()
+	-- Compatibility with Zygmunt's Extra Actions
 	local sExtensions = ExtensionName.getExtensionName();
-	if string.find(sExtensions, "Extra Actions") then
+	if string.find(sExtensions, "FG%-Extra%-Actions") then
 		actions_am.setAnchor("top", "shortcutframe", "bottom");
 	end
 

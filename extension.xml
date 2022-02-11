@@ -3,7 +3,7 @@
 <root version="3.3" >
 	<properties>
 		<name>Feature: Attack Modifiers</name>
-		<version>1.5</version>
+		<version>1.51</version>
 		<loadorder>51</loadorder>
 		<description>
 			<text>Feature: Attack Modifiers</text>
@@ -16,7 +16,7 @@
 			<name>PFRPG</name>
 		</ruleset>
 	</properties>
-	<announcement text="3.5E/PFRPG Attack Modifiers - version 1.5 \rby Zarestia, 2022\r---" font="emotefont"/>
+	<announcement text="3.5E/PFRPG Attack Modifiers - version 1.51 \rby Zarestia, 2022\r---" font="emotefont"/>
 	<base>
 		<!-- Campaign -->
 		<includefile source="campaign/record_char.xml" />
