@@ -6,7 +6,7 @@
 -->
 
 <root>
-	<!-- Attack Modifier -->
+	<!-- Attack Modifiers -->
 	<string name="am_flanking">Flanking (+2)</string>
 	<string name="am_shootmelee">Shoot Melee (-4)</string>
 	<string name="am_touch">Touch</string>

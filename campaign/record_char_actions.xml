@@ -6,15 +6,17 @@
 
 <root>
 	<windowclass name="charsheet_actions" merge="join">
-		<script file="campaign/scripts/char_actions.lua" />
 		<sheetdata>
 			<subwindow name="actions_am" insertbefore="actions">
-				<anchored width="0" height="0">
-					<left />
-					<top />
-				</anchored>
+				<bounds>23,28,-29,130</bounds>
 				<class>char_actions_details_am</class>
+				<activate />
+				<fastinit />
 			</subwindow>
+
+			<button_toggle_am name="toggle_actions_am">
+				<anchored to="actionframe" position="insidetopleft" offset="7,8" />
+			</button_toggle_am>
 			
 			<subwindow name="actions">
 				<anchored>

@@ -8,11 +8,21 @@
 <root>
 	<template name="button_modifierkey_am">
 		<buttoncontrol>
-			<script file="campaign/scripts/button_change.lua" />
+			<script file="campaign/scripts/button_change_am.lua" />
 			<anchored height="16" width="16" />
 			<cursor hover="hand" />
-			<state icon="buttonup_am" />
-			<state icon="buttondown_am" />
+			<state icon="button_checkoff" />
+			<state icon="button_checkon" />
+		</buttoncontrol>
+	</template>
+
+	<template name="button_toggle_am">
+		<buttoncontrol>
+			<script file="campaign/scripts/button_toggle_am.lua" />
+			<anchored height="20" width="20" />
+			<cursor hover="hand" />
+			<state icon="button_expand" />
+			<state icon="button_collapse" />
 		</buttoncontrol>
 	</template>
 </root>
