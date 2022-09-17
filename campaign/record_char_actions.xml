@@ -6,6 +6,24 @@
 
 <root>
 	<windowclass name="charsheet_actions" merge="join">
+		<script>
+			function onInit()
+				if super and super.onInit then
+					super.onInit();
+				end
+
+				onAdvancedCharsheet();
+			end
+
+			function onAdvancedCharsheet()
+				if CompManagerAM.EXTENSIONS["Advanced Charsheet"] then
+					subspells.setAnchor("top", "actions_am", "bottom", "", 22);
+					subweapons.setAnchor("top", "actions_am", "bottom", "", 22);
+					subitems.setAnchor("top", "actions_am", "bottom", "", 22);
+					subothers.setAnchor("top", "actions_am", "bottom", "", 22);
+				end
+			end
+		</script>
 		<sheetdata>
 			<subwindow name="actions_am" insertbefore="actions">
 				<bounds>23,28,-29,130</bounds>
@@ -27,6 +45,13 @@
 				</anchored>
 				<activate />
 				<class>char_actions_details</class>
+				<script>
+					function onInit()
+						if CompManagerAM.EXTENSIONS["Advanced Charsheet"] then
+							destroy();
+						end
+					end
+				</script>
 			</subwindow>
 		</sheetdata>
 	</windowclass>

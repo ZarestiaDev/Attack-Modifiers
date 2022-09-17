@@ -24,7 +24,7 @@
 		
 		<!-- High-Level Scripts -->
 		<script name="ActionAttackCustom" file="scripts/manager_action_attack_custom.lua" />
-		<script name="ExtensionName" file="scripts/manager_get_extension.lua" />
+		<script name="CompManagerAM" file="scripts/manager_get_extension.lua" />
 		
 		<!-- Strings -->
 		<includefile source="strings/am_strings.xml" />

@@ -1,10 +1,7 @@
--- 
--- Please see the license.txt file included with this distribution for 
--- attribution and copyright information.
---
+EXTENSIONS = {};
 
-function getExtensionName()
-	local tName = Extension.getExtensions();
-	local sName = table.concat(tName, ",");
-	return sName;
+function onInit()
+    for index, name in pairs(Extension.getExtensions()) do
+		EXTENSIONS[name] = index;
+	end
 end

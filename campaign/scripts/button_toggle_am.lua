@@ -1,8 +1,17 @@
 TOP_BOUND = 15;
 
 function onInit()
-	if ExtensionName.getExtensionName():match("FG%-Extra%-Actions") then
+	if CompManagerAM.EXTENSIONS["FG-Extra-Actions"] then
 		TOP_BOUND = 80;
+	end
+
+	if CompManagerAM.EXTENSIONS["Advanced Charsheet"] then
+		self.resetAnchor("top");
+		self.resetAnchor("left");
+		self.resetAnchor("right");
+		self.resetAnchor("bottom");
+		self.setAnchor("left", "leftanchor", "right", "relative", 15);
+		self.setAnchor("top", "leftanchor", "bottom");
 	end
 
 	resetAttackModifiers();
