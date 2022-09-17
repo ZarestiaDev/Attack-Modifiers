@@ -59,19 +59,19 @@
 	<windowclass name="char_actions_details_am">
 		<sheetdata>
 			<genericcontrol name="1st_column">
-				<anchored position="insidetopleft" offset="10,5" />
+				<anchored position="insidetopleft" offset="10,10" />
 				<disabled />
 				<invisible />
 			</genericcontrol>
 			
 			<genericcontrol name="2nd_column">
-				<anchored position="insidetopleft" offset="150,0" />
+				<anchored position="insidetopleft" offset="150,10" />
 				<disabled />
 				<invisible />
 			</genericcontrol>
 			
 			<genericcontrol name="3rd_column">
-				<anchored position="insidetopleft" offset="320,0" />
+				<anchored position="insidetopleft" offset="320,10" />
 				<disabled />
 				<invisible />
 			</genericcontrol>

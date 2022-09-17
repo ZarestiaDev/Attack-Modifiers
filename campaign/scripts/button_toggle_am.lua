@@ -11,7 +11,7 @@ function onInit()
 		self.resetAnchor("right");
 		self.resetAnchor("bottom");
 		self.setAnchor("left", "leftanchor", "right", "relative", 15);
-		self.setAnchor("top", "leftanchor", "bottom");
+		self.setAnchor("top", "leftanchor", "bottom", "", 5);
 	end
 
 	resetAttackModifiers();
