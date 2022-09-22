@@ -1,20 +1,35 @@
 TOP_BOUND = 15;
 
 function onInit()
-	if CompManagerAM.EXTENSIONS["FG-Extra-Actions"] then
-		TOP_BOUND = 80;
-	end
-
 	if CompManagerAM.EXTENSIONS["Advanced Charsheet"] then
-		self.resetAnchor("top");
-		self.resetAnchor("left");
-		self.resetAnchor("right");
-		self.resetAnchor("bottom");
-		self.setAnchor("left", "leftanchor", "right", "relative", 15);
-		self.setAnchor("top", "leftanchor", "bottom", "", 5);
+    	OptionsManager.registerCallback("ACAT", stateChanged);
+
+    	stateChanged();
 	end
 
 	resetAttackModifiers();
+end
+
+function onClose()
+	if CompManagerAM.EXTENSIONS["Advanced Charsheet"] then
+    	OptionsManager.unregisterCallback("ACAT", stateChanged);
+	end
+end
+
+function stateChanged()
+	self.resetAnchor("top");
+	self.resetAnchor("left");
+	self.resetAnchor("right");
+	self.resetAnchor("bottom");
+	self.setAnchor("left", "leftanchor", "right", "relative", 15);
+	self.setAnchor("top", "leftanchor", "bottom", "", 5);
+	if OptionsManager.isOption("ACAT", "on") then
+		TOP_BOUND = 47;
+	else
+		TOP_BOUND = 15;
+	end
+
+	onValueChanged();
 end
 
 function onValueChanged()

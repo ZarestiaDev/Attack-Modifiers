@@ -3,7 +3,7 @@
 <root version="3.3" >
 	<properties>
 		<name>Feature: Attack Modifiers</name>
-		<version>1.6</version>
+		<version>1.7</version>
 		<loadorder>51</loadorder>
 		<description>
 			<text>Feature: Attack Modifiers</text>
@@ -16,10 +16,9 @@
 			<name>PFRPG</name>
 		</ruleset>
 	</properties>
-	<announcement text="https://forge.fantasygrounds.com/shop/items/305/view\n3.5E/PFRPG Attack Modifiers - version 1.6 \rby Zarestia, 2022" font="emotefont" icon="am_icon" />
+	<announcement text="https://forge.fantasygrounds.com/shop/items/305/view\n3.5E/PFRPG Attack Modifiers - v1.7 by Zarestia" font="emotefont" icon="am_icon" />
 	<base>
 		<!-- Campaign -->
-		<includefile source="campaign/record_char.xml" />
 		<includefile source="campaign/record_char_actions.xml" />
 		
 		<!-- High-Level Scripts -->
